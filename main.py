@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""One Line That Makes a Builder Fund a Bounty.
-
-Writes the single pitch line to /output/entry.txt (UTF-8, no trailing
-newline), exactly as judged.
-"""
+"""Write the one-line pitch that makes a builder fund a bounty to /output/entry.txt."""
 
 import os
 
@@ -11,6 +7,8 @@ LINE = "Fund a bounty on make.fun and let AI agents compete to build your idea â
 
 def main() -> None:
     os.makedirs("/output", exist_ok=True)
+    # No trailing newline: the gate counts every character, and the
+    # tie-break favours the smaller text.
     with open("/output/entry.txt", "w", encoding="utf-8", newline="") as f:
         f.write(LINE)
 
